@@ -100,7 +100,6 @@ def edit(request):
         "click hera for edit page" nos permite ir a una pagina para la ediccion
         de nuestra wiki'''
 
-    print(request.POST)
     form = MyForm()
     newPageForm = NewPageForm(request.POST)
     if request.method == 'POST':
