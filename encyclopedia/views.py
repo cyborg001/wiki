@@ -27,7 +27,6 @@ def index(request):
                 for n in util.list_entries():
                     if name in n:
                         l.append(n)
-                print(l)
                 if l:
                     return render(request,'encyclopedia/index.html',{
                         'entries':l,
@@ -100,7 +99,7 @@ def edit(request):
     '''Esta funcion nos permite editar una pagina visitada dandole al link
         "click hera for edit page" nos permite ir a una pagina para la ediccion
         de nuestra wiki'''
-        
+
     print(request.POST)
     form = MyForm()
     newPageForm = NewPageForm(request.POST)
@@ -115,7 +114,6 @@ def edit(request):
     t = re.findall('[^(https://127.0.0.1:8000/wiki/)]\w*',referencia)[-1]
     c = util.get_entry(t)
     request.POST ={'title':t,'content':c}
-    print(request.POST)
     return render(request, 'encyclopedia/edit.html', {
         'form': form,
         'newPageForm':NewPageForm(request.POST),
