@@ -6,7 +6,9 @@
 
 {% block body %}
     {{ entry|safe }}
+    
     <div class="edit_entry">
-          <a href="{% url 'edit' %}">Click here for edit entry</a>
+        <br><br><br><hr>
+        <a href="{% url 'edit' %}">Click here for edit entry</a>
     </div>
 {% endblock %}

@@ -12,6 +12,7 @@
 <form action="{% url 'new_page' %}" method="post">
   {% csrf_token %}
   {{ newPageForm }}
+  <br>
   <input type="submit" name="submit" value="submit">
 </form>
 
